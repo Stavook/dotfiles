@@ -1,0 +1,9 @@
+width=600
+height=420
+location=center
+show=drun
+prompt=
+allow_images=true
+insensitive=true
+term=kitty
+layer=overlay

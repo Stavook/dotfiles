@@ -1,0 +1,25 @@
+* {
+    font-family: "Hack Nerd Font", sans-serif;
+    font-size: 18px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @primary;
+    border: none;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+}

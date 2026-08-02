@@ -1,0 +1,26 @@
+#network {
+    background-color: @background;
+    padding: 0 2px;
+    margin: 4px 0;
+    border-radius: 6px;
+    border: 1px solid @secondary;
+}
+
+/* Right-padding compensates each glyph's own overflow past its advance
+   width (Nerd Font icons routinely paint wider than the box they claim) */
+#network.ethernet {
+    padding: 0 6px 0 2px;
+}
+
+#network.wifi {
+    padding: 0 7px 0 2px;
+}
+
+#network.disconnected {
+    color: @error;
+}
+
+#network.disabled,
+#network.linked {
+    color: @alert;
+}

@@ -1,0 +1,26 @@
+{
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio#audio",
+      "pulseaudio#microphone"
+    ]
+  },
+  "pulseaudio#audio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "tooltip-format": "volume: {volume}%"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "tooltip": false
+  }
+}

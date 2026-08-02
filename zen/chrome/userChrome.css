@@ -1,0 +1,33 @@
+/* Dwarven theme — hand-authored, not managed by Zen Mods */
+
+:root {
+  --dwarven-bg: #141414;
+  --dwarven-fg: #e8e3d8;
+  --dwarven-accent: #cc6633;
+  --dwarven-alert: #e8823d;
+  --dwarven-dimmed: #4a4a4a;
+}
+
+#navigator-toolbox,
+#TabsToolbar,
+#nav-bar {
+  background-color: var(--dwarven-bg) !important;
+  color: var(--dwarven-fg) !important;
+}
+
+#urlbar-background {
+  background-color: var(--dwarven-dimmed) !important;
+  border: 1px solid var(--dwarven-accent) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-background {
+  background-color: var(--dwarven-accent) !important;
+}
+
+.tabbrowser-tab:not([selected="true"]) .tab-background {
+  background-color: var(--dwarven-dimmed) !important;
+}
+
+.tab-label {
+  color: var(--dwarven-fg) !important;
+}

@@ -1,0 +1,9 @@
+tooltip {
+    background: @background;
+    border: 1px solid @secondary;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @primary;
+}

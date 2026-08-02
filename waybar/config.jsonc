@@ -1,0 +1,23 @@
+// -*- mode: jsonc -*-
+{
+
+    "spacing": 4,
+    "include": [
+        "./modules/clock.jsonc",
+        "./modules/network.jsonc",
+        "./modules/tray.jsonc",
+        "./modules/power.jsonc",
+        "./modules/audio.jsonc"
+    ],
+    "modules-left": [
+        "custom/power",
+        "tray"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "group/audio"
+    ]
+}

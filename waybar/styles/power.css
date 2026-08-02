@@ -1,0 +1,7 @@
+#custom-power {
+    color: @secondary;
+}
+
+#custom-power:hover {
+    color: @alert;
+}
