@@ -1,7 +1,7 @@
 {
   "custom/power": {
-    "format": "[ <span color='#cc6633'>󰐥</span> ]",
+    "format": "󰐥",
     "tooltip": false,
-    "on-click": "wlogout"
+    "on-click": "~/.config/wofi/powermenu.sh"
   }
 }

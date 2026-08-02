@@ -19,7 +19,7 @@
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
-        "mode": "default",
+        "mode": "auto",
         "effort": "medium"
       },
       "type": "registry"
