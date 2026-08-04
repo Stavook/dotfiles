@@ -7,7 +7,11 @@
         "./modules/network.jsonc",
         "./modules/tray.jsonc",
         "./modules/power.jsonc",
-        "./modules/audio.jsonc"
+        "./modules/audio.jsonc",
+        "./modules/keyboard.jsonc",
+        "./modules/network-keyboard.jsonc",
+        "./modules/separator.jsonc",
+        "./modules/spotify.jsonc"
     ],
     "modules-left": [
         "custom/power",
@@ -17,7 +21,8 @@
         "clock"
     ],
     "modules-right": [
-        "network",
-        "group/audio"
+        "custom/spotify",
+        "group/audio",
+        "group/network-keyboard",
     ]
 }

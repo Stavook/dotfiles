@@ -1,0 +1,10 @@
+{
+  "group/network-keyboard": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "custom/separator",
+      "custom/keyboard-layout"
+    ]
+  }
+}

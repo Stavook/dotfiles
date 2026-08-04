@@ -11,10 +11,6 @@
     color: @primary;
 }
 
-#pulseaudio.microphone {
-    margin-left: 6px;
-}
-
 #pulseaudio.audio.muted,
 #pulseaudio.microphone.source-muted {
     color: @error;

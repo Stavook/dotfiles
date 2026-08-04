@@ -3,6 +3,7 @@
     "orientation": "horizontal",
     "modules": [
       "pulseaudio#audio",
+      "custom/separator",
       "pulseaudio#microphone"
     ]
   },
@@ -10,11 +11,12 @@
     "format": "{icon} {volume}%",
     "format-muted": "󰝟 Muted",
     "format-icons": {
+      "headphone": "󰋋",
       "default": ["󰕿", "󰖀", "󰕾"]
     },
     "scroll-step": 5,
-    "on-click": "pavucontrol",
-    "tooltip-format": "volume: {volume}%"
+    "on-click": "~/.config/wofi/audio-switcher.sh",
+    "tooltip-format": "Volume: {volume}%"
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",

@@ -1,9 +1,8 @@
 #network {
-    background-color: @background;
+    color: @primary;
     padding: 0 2px;
-    margin: 4px 0;
-    border-radius: 6px;
-    border: 1px solid @secondary;
+    margin: 0 2px;
+    background-color: transparent;
 }
 
 /* Right-padding compensates each glyph's own overflow past its advance

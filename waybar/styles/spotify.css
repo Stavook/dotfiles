@@ -1,0 +1,13 @@
+#custom-spotify {
+    background-color: @background;
+    color: @primary;
+    padding: 0 10px;
+    margin: 4px 6px;
+    border-radius: 6px;
+    border: 1px solid @secondary;
+    min-width: 220px;
+}
+
+#custom-spotify.paused {
+    color: @error;
+}

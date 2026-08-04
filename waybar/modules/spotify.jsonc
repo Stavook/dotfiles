@@ -1,0 +1,11 @@
+{
+  "custom/spotify": {
+    "exec": "~/.config/waybar/scripts/spotify.sh",
+    "return-type": "json",
+    "hide-empty-text": true,
+    "exec-on-event": false,
+    "format": "{text}",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "playerctl -p spotify next"
+  }
+}

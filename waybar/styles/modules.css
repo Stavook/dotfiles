@@ -1,7 +1,0 @@
-/* Flat treatment for every module */
-#network {
-    padding: 0 6px;
-    margin: 0 2px;
-    background-color: transparent;
-    color: @primary;
-}
