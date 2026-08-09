@@ -38,6 +38,7 @@ link "$DOTFILES_DIR/waybar" "$HOME/.config/waybar"
 link "$DOTFILES_DIR/kitty"  "$HOME/.config/kitty"
 link "$DOTFILES_DIR/wofi"   "$HOME/.config/wofi"
 link "$DOTFILES_DIR/zed"    "$HOME/.config/zed"
+link "$DOTFILES_DIR/fastfetch" "$HOME/.config/fastfetch"
 
 echo "== zsh =="
 link "$DOTFILES_DIR/zsh/.zshrc"    "$HOME/.zshrc"

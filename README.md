@@ -8,6 +8,7 @@ Personal config for Arch + KDE Plasma (Wayland).
 - `kitty/` — terminal
 - `wofi/` — app launcher + power/audio menus
 - `zed/` — editor
+- `fastfetch/` — system info fetch config + ASCII logo
 - `zsh/` — `.zshrc`, `.p10k.zsh`
 - `kde/` — `kwinrulesrc`, `kxkbrc`, `Dwarven.colors` color scheme
 - `zen/chrome/` — Zen browser userChrome/userContent
@@ -27,7 +28,7 @@ real config instead of overwriting it. Does not install packages.
 KDE Plasma is assumed (kwin, systemsettings).
 
 ```
-sudo pacman -S waybar kitty wofi zed zsh playerctl qt6-tools wireplumber libpulse dbus ttf-hack-nerd
+sudo pacman -S waybar kitty wofi zed zsh fastfetch playerctl qt6-tools wireplumber libpulse dbus ttf-hack-nerd
 ```
 
 AUR (via `yay`/`paru`):
