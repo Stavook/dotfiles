@@ -49,6 +49,13 @@ link "$DOTFILES_DIR/kde/Dwarven.colors" "$HOME/.local/share/color-schemes/Dwarve
 link "$DOTFILES_DIR/kde/kwinrulesrc"    "$HOME/.config/kwinrulesrc"
 link "$DOTFILES_DIR/kde/kxkbrc"         "$HOME/.config/kxkbrc"
 
+if command -v kwriteconfig6 &>/dev/null; then
+  "$DOTFILES_DIR/kde/apply.sh"
+else
+  echo "  kwriteconfig6 not found -- skipping Krohnkite settings/hotkeys/color scheme."
+  echo "  Run kde/apply.sh manually once KDE tools are available."
+fi
+
 echo "== zen browser =="
 zen_profiles_ini="$HOME/.config/zen/profiles.ini"
 

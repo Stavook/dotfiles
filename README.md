@@ -10,7 +10,8 @@ Personal config for Arch + KDE Plasma (Wayland).
 - `zed/` — editor
 - `fastfetch/` — system info fetch config + ASCII logo
 - `zsh/` — `.zshrc`, `.p10k.zsh`
-- `kde/` — `kwinrulesrc`, `kxkbrc`, `Dwarven.colors` color scheme
+- `kde/` — `kwinrulesrc`, `kxkbrc`, `Dwarven.colors` color scheme, Krohnkite
+  tiling settings + hotkeys (merged in via `kde/apply.sh`, see below)
 - `zen/chrome/` — Zen browser userChrome/userContent
 
 ## Setup
@@ -22,6 +23,16 @@ git clone <this-repo> ~/dotfiles
 
 Symlinks every config into place. Safe to re-run; backs up any pre-existing
 real config instead of overwriting it. Does not install packages.
+
+Also runs `kde/apply.sh`, which merges Krohnkite's tiling settings, its
+keyboard shortcuts, and the Dwarven color scheme into `kwinrc` /
+`kglobalshortcutsrc` / `kdeglobals` via `kwriteconfig6` — those files mix in
+a lot of unrelated per-machine KDE state, so they're not symlinked whole,
+just the relevant keys are merged in. Requires the Krohnkite KWin script to
+already be installed (via System Settings → Window Management → KWin
+Scripts, or `kwin-scripts` from the AUR). Keyboard shortcut changes need a
+logout/login to fully take effect (KDE's global shortcut grabber doesn't
+hot-reload).
 
 ## Prerequisites
 
