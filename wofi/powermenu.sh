@@ -14,7 +14,7 @@ case "$selected" in
         loginctl lock-session
         ;;
     "Logout")
-        qdbus6 org.kde.ksmserver /KSMServer logout 0 0 0
+        hyprctl dispatch 'hl.dsp.exit()'
         ;;
     "Suspend")
         systemctl suspend

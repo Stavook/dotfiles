@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal config for Arch + KDE Plasma (Wayland).
+Personal config for Arch + Hyprland (Wayland).
 
 ## Structure
 
@@ -10,9 +10,11 @@ Personal config for Arch + KDE Plasma (Wayland).
 - `zed/` — editor
 - `fastfetch/` — system info fetch config + ASCII logo
 - `zsh/` — `.zshrc`, `.p10k.zsh`
-- `kde/` — `kwinrulesrc`, `kxkbrc`, `Dwarven.colors` color scheme, Krohnkite
-  tiling settings + hotkeys (merged in via `kde/apply.sh`, see below)
 - `zen/chrome/` — Zen browser userChrome/userContent
+- `hypr/` — Hyprland config (`hyprland.lua`, `hypridle.conf`, `hyprlock.conf`)
+- `mako/` — notification daemon config
+- `gtk-3.0/`, `gtk-4.0/` — GTK app theming/font
+- `fontconfig/` — default font substitution (Hack Nerd Font)
 
 ## Setup
 
@@ -24,22 +26,13 @@ git clone <this-repo> ~/dotfiles
 Symlinks every config into place. Safe to re-run; backs up any pre-existing
 real config instead of overwriting it. Does not install packages.
 
-Also runs `kde/apply.sh`, which merges Krohnkite's tiling settings, its
-keyboard shortcuts, and the Dwarven color scheme into `kwinrc` /
-`kglobalshortcutsrc` / `kdeglobals` via `kwriteconfig6` — those files mix in
-a lot of unrelated per-machine KDE state, so they're not symlinked whole,
-just the relevant keys are merged in. Requires the Krohnkite KWin script to
-already be installed (via System Settings → Window Management → KWin
-Scripts, or `kwin-scripts` from the AUR). Keyboard shortcut changes need a
-logout/login to fully take effect (KDE's global shortcut grabber doesn't
-hot-reload).
-
 ## Prerequisites
 
-KDE Plasma is assumed (kwin, systemsettings).
-
 ```
-sudo pacman -S waybar kitty wofi zed zsh fastfetch playerctl qt6-tools wireplumber libpulse dbus ttf-hack-nerd
+sudo pacman -S hyprland xdg-desktop-portal-hyprland waybar kitty wofi zed zsh \
+  fastfetch playerctl wireplumber libpulse dbus ttf-hack-nerd \
+  mpvpaper hypridle hyprlock mako grim slurp wl-clipboard qt6ct \
+  networkmanager
 ```
 
 AUR (via `yay`/`paru`):
@@ -47,6 +40,22 @@ AUR (via `yay`/`paru`):
 ```
 yay -S zen-browser-bin zsh-theme-powerlevel10k-git
 ```
+
+## Fonts
+
+Hack Nerd Font is set as the default everywhere: `gtk-3.0`/`gtk-4.0`
+`settings.ini` for GTK apps, `fontconfig/fonts.conf` for generic
+sans-serif/serif/monospace substitution (covers apps with no explicit font
+of their own), and `QT_QPA_PLATFORMTHEME=qt6ct` (set in `hyprland.lua`) so
+Qt apps like Dolphin pick it up via `qt6ct` instead of needing a KDE
+session.
+
+## System tray
+
+Waybar's own `tray` module hosts the `StatusNotifierWatcher`/`Host`
+protocol itself — no separate tray daemon needed, despite the `org.kde.`
+namespace in the D-Bus interface name (that's just the protocol's
+historical naming, not an actual KDE dependency).
 
 ## Zen browser
 

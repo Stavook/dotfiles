@@ -8,8 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "cli_default_open_behavior": "existing_window",
-  // Let KWin/Breeze draw the window decoration (titlebar+border) instead of Zed,
-  // so the active-window border matches the rest of the system (Dwarven accent).
+  // Let the compositor draw the window decoration (border) instead of Zed.
   "window_decorations": "server",
   "agent": {
     "sidebar_side": "left",
@@ -19,8 +18,8 @@
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
-        "mode": "plan",
-        "effort": "high"
+        "mode": "auto",
+        "effort": "medium"
       },
       "type": "registry"
     }

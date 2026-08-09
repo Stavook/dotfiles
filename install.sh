@@ -39,22 +39,18 @@ link "$DOTFILES_DIR/kitty"  "$HOME/.config/kitty"
 link "$DOTFILES_DIR/wofi"   "$HOME/.config/wofi"
 link "$DOTFILES_DIR/zed"    "$HOME/.config/zed"
 link "$DOTFILES_DIR/fastfetch" "$HOME/.config/fastfetch"
+link "$DOTFILES_DIR/hypr/hyprland.lua"   "$HOME/.config/hypr/hyprland.lua"
+link "$DOTFILES_DIR/hypr/hypridle.conf"  "$HOME/.config/hypr/hypridle.conf"
+link "$DOTFILES_DIR/hypr/hyprlock.conf"  "$HOME/.config/hypr/hyprlock.conf"
+link "$DOTFILES_DIR/hypr/toggle-hide.sh" "$HOME/.config/hypr/toggle-hide.sh"
+link "$DOTFILES_DIR/mako"                "$HOME/.config/mako"
+link "$DOTFILES_DIR/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+link "$DOTFILES_DIR/gtk-4.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
+link "$DOTFILES_DIR/fontconfig/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
 
 echo "== zsh =="
 link "$DOTFILES_DIR/zsh/.zshrc"    "$HOME/.zshrc"
 link "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
-
-echo "== KDE (individual files only) =="
-link "$DOTFILES_DIR/kde/Dwarven.colors" "$HOME/.local/share/color-schemes/Dwarven.colors"
-link "$DOTFILES_DIR/kde/kwinrulesrc"    "$HOME/.config/kwinrulesrc"
-link "$DOTFILES_DIR/kde/kxkbrc"         "$HOME/.config/kxkbrc"
-
-if command -v kwriteconfig6 &>/dev/null; then
-  "$DOTFILES_DIR/kde/apply.sh"
-else
-  echo "  kwriteconfig6 not found -- skipping Krohnkite settings/hotkeys/color scheme."
-  echo "  Run kde/apply.sh manually once KDE tools are available."
-fi
 
 echo "== zen browser =="
 zen_profiles_ini="$HOME/.config/zen/profiles.ini"

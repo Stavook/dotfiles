@@ -11,11 +11,13 @@
         "./modules/keyboard.jsonc",
         "./modules/network-keyboard.jsonc",
         "./modules/separator.jsonc",
-        "./modules/spotify.jsonc"
+        "./modules/spotify.jsonc",
+        "./modules/workspaces.jsonc"
     ],
     "modules-left": [
         "custom/power",
-        "tray"
+        "tray",
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "clock"

@@ -1,0 +1,7 @@
+{
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-click": "activate",
+    "sort-by-number": true
+  }
+}

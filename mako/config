@@ -1,0 +1,16 @@
+font=Hack Nerd Font 11
+background-color=#141414
+text-color=#e8e3d8
+border-color=#cc6633
+border-size=2
+border-radius=6
+padding=10
+margin=10
+default-timeout=5000
+
+[urgency=low]
+border-color=#4a4a4a
+
+[urgency=critical]
+border-color=#da4453
+default-timeout=0
