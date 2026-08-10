@@ -5,6 +5,7 @@
     "hide-empty-text": true,
     "exec-on-event": false,
     "format": "{text}",
+    "escape": true,
     "on-click": "playerctl -p spotify play-pause",
     "on-click-right": "playerctl -p spotify next"
   }

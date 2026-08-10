@@ -45,8 +45,17 @@ link "$DOTFILES_DIR/hypr/hyprlock.conf"  "$HOME/.config/hypr/hyprlock.conf"
 link "$DOTFILES_DIR/hypr/toggle-hide.sh" "$HOME/.config/hypr/toggle-hide.sh"
 link "$DOTFILES_DIR/mako"                "$HOME/.config/mako"
 link "$DOTFILES_DIR/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+link "$DOTFILES_DIR/gtk-3.0/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
 link "$DOTFILES_DIR/gtk-4.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
+link "$DOTFILES_DIR/qt6ct/qt6ct.conf" "$HOME/.config/qt6ct/qt6ct.conf"
 link "$DOTFILES_DIR/fontconfig/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
+
+if command -v gsettings &>/dev/null; then
+  gsettings set org.gnome.desktop.interface gtk-theme 'Default'
+  gsettings set org.gnome.desktop.interface icon-theme 'YAMIS'
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  echo "  set gsettings gtk-theme/icon-theme/color-scheme (some GTK apps, e.g. Thunar, read these instead of settings.ini)"
+fi
 
 echo "== zsh =="
 link "$DOTFILES_DIR/zsh/.zshrc"    "$HOME/.zshrc"

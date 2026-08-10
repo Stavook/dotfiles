@@ -22,11 +22,13 @@
   padding: 8px;
   margin-bottom: 10px;
   outline: none;
+  box-shadow: none;
 }
 
 #input:focus {
   border: 1px solid #cc6633;
   outline: none;
+  box-shadow: none;
 }
 
 #scroll {

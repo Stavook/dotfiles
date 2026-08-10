@@ -15,8 +15,8 @@
 }
 
 #workspaces button.active {
-    background-color: @secondary;
-    color: @background;
+    background-color: transparent;
+    color: @secondary;
 }
 
 #workspaces button:hover {
