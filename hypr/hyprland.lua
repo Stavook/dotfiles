@@ -53,7 +53,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("mpvpaper -f -o \"no-audio loop keepaspect=no\" HDMI-A-1 ~/.local/share/Steam/steamapps/workshop/content/431960/3662185984/main.mp4")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("mako")
-  h1.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
 end)
 
 
