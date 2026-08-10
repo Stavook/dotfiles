@@ -49,6 +49,12 @@ link "$DOTFILES_DIR/gtk-3.0/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
 link "$DOTFILES_DIR/gtk-4.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
 link "$DOTFILES_DIR/qt6ct/qt6ct.conf" "$HOME/.config/qt6ct/qt6ct.conf"
 link "$DOTFILES_DIR/fontconfig/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
+link "$DOTFILES_DIR/colorschemes/Dwarven.colors" "$HOME/.local/share/color-schemes/Dwarven.colors"
+
+if command -v kwriteconfig6 &>/dev/null; then
+  kwriteconfig6 --file kdeglobals --group General --key ColorScheme Dwarven
+  echo "  applied Dwarven color scheme -> kdeglobals (needed by KDE Frameworks apps like Dolphin)"
+fi
 
 if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.interface gtk-theme 'Default'
