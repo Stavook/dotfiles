@@ -1,22 +1,3 @@
-/* Override Adwaita's named colors so its own built-in CSS rules
-   (which reference these throughout) render in the Dwarven palette. */
-@define-color theme_bg_color #141414;
-@define-color theme_fg_color #e8e3d8;
-@define-color theme_base_color #1a1a1a;
-@define-color theme_text_color #e8e3d8;
-@define-color theme_selected_bg_color #cc6633;
-@define-color theme_selected_fg_color #141414;
-@define-color theme_tooltip_bg_color #141414;
-@define-color theme_tooltip_fg_color #e8e3d8;
-@define-color insensitive_bg_color #1a1a1a;
-@define-color insensitive_fg_color #4a4a4a;
-@define-color insensitive_base_color #141414;
-@define-color borders #4a4a4a;
-@define-color unfocused_borders #4a4a4a;
-@define-color warning_color #e8823d;
-@define-color error_color #da4453;
-@define-color success_color #cc6633;
-
 menu, .menu, .context-menu {
   background-color: #141414;
   color: #e8e3d8;
