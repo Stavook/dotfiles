@@ -16,6 +16,20 @@
 -- require("myColors")
 
 
+------------------------
+---- PER-MACHINE ----
+------------------------
+
+-- This config is shared (symlinked) across machines. Branch on hostname for
+-- the handful of settings that actually differ per machine (monitor output
+-- name/mode, mpvpaper target). Add new machines here as needed.
+local hostname = io.popen("hostname"):read("*l")
+local isDesktop = hostname == "st4v-pc"
+
+local monitorOutput = isDesktop and "HDMI-A-1"     or "eDP-1"
+local monitorMode   = isDesktop and "2560x1080@75" or "preferred"
+
+
 ------------------
 ---- MONITORS ----
 ------------------
@@ -23,7 +37,7 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
     output   = "",
-    mode     = "preferred",
+    mode     = monitorMode,
     position = "auto",
     scale    = "auto",
 })
@@ -50,11 +64,11 @@ local menu        = "wofi"
 --
 hl.on("hyprland.start", function ()
   hl.exec_cmd("waybar")
-  hl.exec_cmd("mpvpaper -f -o \"no-audio loop keepaspect=no\" HDMI-A-1 ~/.local/share/Steam/steamapps/workshop/content/431960/3662185984/main.mp4")
+  hl.exec_cmd("mpvpaper -f -o \"no-audio loop keepaspect=no\" " .. monitorOutput .. " ~/Videos/wallpaper.mp4")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("mako")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-  hl.exec_cmd("corectrl -m")
+  hl.exec_cmd("corectrl --minimize-systray")
 end)
 
 
