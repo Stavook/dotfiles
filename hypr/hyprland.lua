@@ -23,7 +23,9 @@
 -- This config is shared (symlinked) across machines. Branch on hostname for
 -- the handful of settings that actually differ per machine (monitor output
 -- name/mode, mpvpaper target). Add new machines here as needed.
-local hostname = io.popen("hostname"):read("*l")
+local hostnameFile = io.open("/etc/hostname", "r")
+local hostname = hostnameFile:read("*l")
+hostnameFile:close()
 local isDesktop = hostname == "st4v-pc"
 
 local monitorOutput = isDesktop and "HDMI-A-1"     or "eDP-1"

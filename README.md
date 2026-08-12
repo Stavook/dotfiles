@@ -33,7 +33,7 @@ real config instead of overwriting it.
 
 ```
 sudo pacman -S hyprland xdg-desktop-portal-hyprland hyprpolkitagent \
-  hypridle hyprlock mako mpvpaper grim slurp wl-clipboard \
+  hypridle hyprlock mako grim slurp wl-clipboard \
   waybar kitty wofi zed zsh fastfetch dolphin \
   playerctl wireplumber pipewire pipewire-pulse pipewire-alsa pipewire-jack pipewire-audio \
   qt6ct qt5-wayland qt6-wayland kvantum kvantum-qt5 \
@@ -43,7 +43,7 @@ sudo pacman -S hyprland xdg-desktop-portal-hyprland hyprpolkitagent \
 AUR (via `yay`/`paru`):
 
 ```
-yay -S zen-browser-bin zsh-theme-powerlevel10k-git
+yay -S zen-browser-bin zsh-theme-powerlevel10k-git mpvpaper
 ```
 
 ## Manual steps (not handled by install.sh)
