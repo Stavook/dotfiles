@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 # Wi-Fi network switcher via wofi dmenu, prompts for a password when needed.
 
+wifi_device=$(nmcli -t -f DEVICE,TYPE device status | awk -F: '$2 == "wifi" { print $1; exit }')
+if [ -z "$wifi_device" ]; then
+    eth_conn=$(nmcli -t -f DEVICE,TYPE,STATE,CONNECTION device status | awk -F: '$2 == "ethernet" && $3 == "connected" { print $4; exit }')
+    if [ -n "$eth_conn" ]; then
+        echo "No Wi-Fi device — connected via $eth_conn" | wofi --dmenu --prompt "Network"
+    else
+        echo "No Wi-Fi device found" | wofi --dmenu --prompt "Network"
+    fi
+    exit 0
+fi
+
 declare -A ssid_for_entry
 declare -A ssid_for_entry_seen
 
