@@ -5,6 +5,6 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "󰖩",
     "format-disconnected": "󰖪",
-    "on-click": "kitty -e nmtui"
+    "on-click": "~/.config/wofi/network-switcher.sh"
   }
 }

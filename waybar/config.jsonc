@@ -12,7 +12,8 @@
         "./modules/network-keyboard.jsonc",
         "./modules/separator.jsonc",
         "./modules/spotify.jsonc",
-        "./modules/workspaces.jsonc"
+        "./modules/workspaces.jsonc",
+        "./modules/system.jsonc"
     ],
     "modules-left": [
         "custom/power",
@@ -26,5 +27,7 @@
         "custom/spotify",
         "group/audio",
         "group/network-keyboard",
+        "battery",
+        "backlight",
     ]
 }

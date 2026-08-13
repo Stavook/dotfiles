@@ -1,0 +1,21 @@
+#battery,
+#backlight {
+    background-color: @background;
+    padding: 0 10px;
+    margin: 4px 6px;
+    border-radius: 6px;
+    border: 1px solid @secondary;
+    color: @primary;
+}
+
+#battery.charging {
+    color: @secondary;
+}
+
+#battery.warning:not(.charging) {
+    color: @alert;
+}
+
+#battery.critical:not(.charging) {
+    color: @error;
+}
