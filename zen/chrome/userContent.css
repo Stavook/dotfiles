@@ -1,0 +1,10 @@
+select,
+select option,
+select optgroup {
+  color: #e8e3d8 !important;
+  background-color: #141414 !important;
+}
+
+select option:disabled {
+  color: #8a8578 !important;
+}
