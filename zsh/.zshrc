@@ -1,3 +1,4 @@
+fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -77,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-interactive-cd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,5 +129,3 @@ if [[ -n ${terminfo[khome]} ]]; then
 else
   bindkey '^[[H' smart-home
 fi
-
-fastfetch
