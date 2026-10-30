@@ -65,7 +65,6 @@ local menu        = "wofi"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("waybar")
   hl.exec_cmd("mpvpaper -f -o \"no-audio loop keepaspect=no\" " .. monitorOutput .. " ~/Videos/wallpaper.mp4")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("mako")
