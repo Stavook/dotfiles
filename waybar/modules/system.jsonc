@@ -3,7 +3,8 @@
     "format": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "format-charging": " {capacity}%",
-    "tooltip-format": "{timeTo}"
+    "tooltip-format": "{timeTo}",
+    "on-click": "~/.config/wofi/tlp-switcher.sh"
   },
   "backlight": {
     "format": "{icon} {percent}%",
