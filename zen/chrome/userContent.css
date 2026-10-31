@@ -1,10 +1,12 @@
+@import url("file:///home/st4v/.config/aether/theme/zen-colors.css");
+
 select,
 select option,
 select optgroup {
-  color: #e8e3d8 !important;
-  background-color: #141414 !important;
+  color: var(--aether-fg) !important;
+  background-color: var(--aether-bg) !important;
 }
 
 select option:disabled {
-  color: #8a8578 !important;
+  color: var(--aether-dim-fg) !important;
 }

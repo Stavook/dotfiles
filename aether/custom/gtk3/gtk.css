@@ -1,0 +1,71 @@
+/* Recolors GTK3's built-in Adwaita theme with plain style rules (GTK3 ignores
+   @define-color overrides for it). Colors come from Aether. */
+window, .background {
+  background-color: {background};
+  color: {foreground};
+}
+
+headerbar, .titlebar {
+  background-image: none;
+  background-color: {background};
+  color: {foreground};
+  border-bottom: 1px solid {lighter_bg};
+  box-shadow: none;
+}
+
+.view, treeview.view, iconview, textview text, list, row, placessidebar, .sidebar {
+  background-color: {dark_bg};
+  color: {foreground};
+}
+
+treeview.view header button {
+  background-color: {background};
+  color: {dark_fg};
+}
+
+.view:selected, treeview.view:selected, iconview:selected, row:selected,
+placessidebar row:selected, selection {
+  background-color: {accent};
+  color: {selection_foreground};
+}
+
+button {
+  background-image: none;
+  background-color: {lighter_bg};
+  color: {foreground};
+  border: 1px solid {lighter_bg};
+  box-shadow: none;
+}
+button:hover { background-color: {muted}; }
+button:disabled { color: {dark_fg}; }
+button.suggested-action { background-color: {accent}; color: {selection_foreground}; }
+button.destructive-action { background-color: {red}; color: {selection_foreground}; }
+
+entry, spinbutton {
+  background-image: none;
+  background-color: {dark_bg};
+  color: {foreground};
+  border: 1px solid {lighter_bg};
+  box-shadow: none;
+}
+entry:focus, spinbutton:focus { border-color: {accent}; }
+
+menu, .menu, .context-menu, popover, popover.background {
+  background-color: {background};
+  color: {foreground};
+  border: 1px solid {accent};
+  border-radius: 4px;
+}
+menuitem:hover, .menuitem:hover {
+  background-color: {accent};
+  color: {selection_foreground};
+}
+
+tooltip, tooltip.background {
+  background-color: {background};
+  color: {foreground};
+  border: 1px solid {accent};
+}
+
+scrollbar slider { background-color: {muted}; }
+separator { background-color: {lighter_bg}; }

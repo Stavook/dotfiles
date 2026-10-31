@@ -1,0 +1,4 @@
+{
+    "template": "theme.conf.user",
+    "destination": "~/.cache/aether-sddm-theme.conf.user"
+}

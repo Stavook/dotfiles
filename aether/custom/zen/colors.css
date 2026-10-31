@@ -1,0 +1,7 @@
+:root {
+  --aether-bg: {background};
+  --aether-fg: {foreground};
+  --aether-accent: {accent};
+  --aether-dimmed: {muted};
+  --aether-dim-fg: {dark_fg};
+}

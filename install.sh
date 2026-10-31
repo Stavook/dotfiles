@@ -43,20 +43,32 @@ link "$DOTFILES_DIR/hypr/hyprland.lua"   "$HOME/.config/hypr/hyprland.lua"
 link "$DOTFILES_DIR/hypr/hypridle.conf"  "$HOME/.config/hypr/hypridle.conf"
 link "$DOTFILES_DIR/hypr/hyprlock.conf"  "$HOME/.config/hypr/hyprlock.conf"
 link "$DOTFILES_DIR/hypr/toggle-hide.sh" "$HOME/.config/hypr/toggle-hide.sh"
-link "$DOTFILES_DIR/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
-link "$DOTFILES_DIR/gtk-3.0/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
-link "$DOTFILES_DIR/gtk-4.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
-link "$DOTFILES_DIR/qt6ct/qt6ct.conf" "$HOME/.config/qt6ct/qt6ct.conf"
 link "$DOTFILES_DIR/fontconfig/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
+link "$DOTFILES_DIR/qt6ct/qt6ct.conf" "$HOME/.config/qt6ct/qt6ct.conf"
 
 if command -v gsettings &>/dev/null; then
-  gsettings set org.gnome.desktop.interface gtk-theme 'Default'
-  gsettings set org.gnome.desktop.interface icon-theme 'YAMIS'
+  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+  gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
+  gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 10'
+  gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 10'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-  echo "  set gsettings gtk-theme/icon-theme/color-scheme (some GTK apps, e.g. Thunar, read these instead of settings.ini)"
+  echo "  set gsettings theme/icons/fonts"
 fi
 
-echo "== aether (colors for waybar/wofi/mako/kitty/hyprland/hyprlock/zed/qt/dolphin) =="
+# KDE Frameworks apps (Dolphin) read icons and fonts from kdeglobals, which
+# takes precedence over qt6ct.
+if command -v kwriteconfig6 &>/dev/null; then
+  kde_font="JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0"
+  kwriteconfig6 --file kdeglobals --group Icons --key Theme Papirus-Dark
+  for key in font fixed menuFont toolBarFont; do
+    kwriteconfig6 --file kdeglobals --group General --key "$key" "$kde_font"
+  done
+  kwriteconfig6 --file kdeglobals --group General --key smallestReadableFont "${kde_font/,10,/,8,}"
+  echo "  set kdeglobals icon theme and fonts"
+fi
+
+echo "== aether (colors for waybar/wofi/mako/kitty/hyprland/hyprlock/zed/dolphin/zen/vesktop) =="
 link "$DOTFILES_DIR/aether/custom" "$HOME/.config/aether/custom"
 
 # Older installs symlinked ~/.config/mako into the repo. Aether now symlinks
@@ -64,12 +76,12 @@ link "$DOTFILES_DIR/aether/custom" "$HOME/.config/aether/custom"
 [ -L "$HOME/.config/mako" ] && rm "$HOME/.config/mako"
 mkdir -p "$HOME/.config/mako"
 
-if command -v aether &>/dev/null; then
-  aether --import-colors-toml "$DOTFILES_DIR/aether/dwarven.colors.toml" \
-    --wallpaper "$DOTFILES_DIR/sddm/Dwarven/background.jpg" >/dev/null
-  echo "  applied Dwarven palette via aether"
-else
+# No theme is applied here on purpose, so re-running install.sh never overwrites
+# the one you picked. On a new machine, open Aether and apply a theme once.
+if ! command -v aether &>/dev/null; then
   echo "  aether not installed -- colors won't be generated until it is"
+elif [ ! -f "$HOME/.config/aether/theme/colors.toml" ]; then
+  echo "  no Aether theme applied yet -- open Aether and apply one"
 fi
 
 # Aether only writes the Vencord theme into its own dir; Vesktop reads

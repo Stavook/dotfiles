@@ -1,0 +1,105 @@
+/* Recolors GTK4's built-in Adwaita theme. Colors come from Aether. */
+@define-color window_bg_color {background};
+@define-color window_fg_color {foreground};
+@define-color view_bg_color {dark_bg};
+@define-color view_fg_color {foreground};
+@define-color headerbar_bg_color {background};
+@define-color headerbar_fg_color {foreground};
+@define-color headerbar_border_color {lighter_bg};
+@define-color sidebar_bg_color {dark_bg};
+@define-color sidebar_fg_color {foreground};
+@define-color card_bg_color {lighter_bg};
+@define-color card_fg_color {foreground};
+@define-color popover_bg_color {lighter_bg};
+@define-color popover_fg_color {foreground};
+@define-color dialog_bg_color {background};
+@define-color dialog_fg_color {foreground};
+@define-color accent_bg_color {accent};
+@define-color accent_fg_color {selection_foreground};
+@define-color accent_color {accent};
+@define-color destructive_bg_color {red};
+@define-color destructive_fg_color {selection_foreground};
+@define-color destructive_color {red};
+@define-color success_color {green};
+@define-color warning_color {orange};
+@define-color error_color {red};
+
+/* Plain style rules for GTK4 apps without libadwaita, which ignore the names
+   above. */
+window, window.background, window.dialog, .background, notebook, notebook > stack,
+scrolledwindow, viewport, paned, stack {
+  background-color: {background};
+  color: {foreground};
+}
+
+headerbar {
+  background-image: none;
+  background-color: {background};
+  color: {foreground};
+  border-bottom: 1px solid {lighter_bg};
+  box-shadow: none;
+}
+
+.view, textview text, listview, columnview, list, row, placessidebar, .sidebar {
+  background-color: {dark_bg};
+  color: {foreground};
+}
+
+.view:selected, listview > row:selected, columnview > listview > row:selected,
+row:selected, selection {
+  background-color: {accent};
+  color: {selection_foreground};
+}
+
+button {
+  background-image: none;
+  background-color: {lighter_bg};
+  color: {foreground};
+  border: 1px solid {lighter_bg};
+  box-shadow: none;
+}
+button:hover { background-color: {muted}; }
+button:disabled { color: {dark_fg}; }
+button.suggested-action { background-color: {accent}; color: {selection_foreground}; }
+button.destructive-action { background-color: {red}; color: {selection_foreground}; }
+
+entry, spinbutton, dropdown > button {
+  background-image: none;
+  background-color: {dark_bg};
+  color: {foreground};
+  border: 1px solid {lighter_bg};
+  box-shadow: none;
+}
+entry:focus-within, spinbutton:focus-within { border-color: {accent}; }
+
+popover > contents, popover.background > contents {
+  background-color: {background};
+  color: {foreground};
+  border: 1px solid {accent};
+}
+
+tooltip, tooltip.background {
+  background-color: {background};
+  color: {foreground};
+  border: 1px solid {accent};
+}
+
+scale highlight, progressbar progress, switch:checked {
+  background-color: {accent};
+}
+scale trough, progressbar trough, switch {
+  background-color: {lighter_bg};
+}
+scale slider { background-color: {foreground}; }
+
+notebook > header > tabs > tab:checked {
+  box-shadow: inset 0 -2px {accent};
+  color: {foreground};
+}
+check:checked, radio:checked {
+  background-color: {accent};
+  color: {selection_foreground};
+}
+
+scrollbar slider { background-color: {muted}; }
+separator { background-color: {lighter_bg}; }

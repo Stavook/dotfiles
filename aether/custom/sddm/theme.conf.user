@@ -1,0 +1,9 @@
+[General]
+bg={background}
+fg={foreground}
+accent={accent}
+alert={orange}
+error={red}
+dimmed={muted}
+surface={dark_bg}
+onAccent={selection_foreground}

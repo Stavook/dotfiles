@@ -1,33 +1,26 @@
-/* Dwarven theme — hand-authored, not managed by Zen Mods */
-
-:root {
-  --dwarven-bg: #141414;
-  --dwarven-fg: #e8e3d8;
-  --dwarven-accent: #cc6633;
-  --dwarven-alert: #e8823d;
-  --dwarven-dimmed: #4a4a4a;
-}
+/* Colors come from Aether (aether/custom/zen), not Zen Mods */
+@import url("file:///home/st4v/.config/aether/theme/zen-colors.css");
 
 #navigator-toolbox,
 #TabsToolbar,
 #nav-bar {
-  background-color: var(--dwarven-bg) !important;
-  color: var(--dwarven-fg) !important;
+  background-color: var(--aether-bg) !important;
+  color: var(--aether-fg) !important;
 }
 
 #urlbar-background {
-  background-color: var(--dwarven-dimmed) !important;
-  border: 1px solid var(--dwarven-accent) !important;
+  background-color: var(--aether-dimmed) !important;
+  border: 1px solid var(--aether-accent) !important;
 }
 
 .tabbrowser-tab[selected="true"] .tab-background {
-  background-color: var(--dwarven-accent) !important;
+  background-color: var(--aether-accent) !important;
 }
 
 .tabbrowser-tab:not([selected="true"]) .tab-background {
-  background-color: var(--dwarven-dimmed) !important;
+  background-color: var(--aether-dimmed) !important;
 }
 
 .tab-label {
-  color: var(--dwarven-fg) !important;
+  color: var(--aether-fg) !important;
 }
