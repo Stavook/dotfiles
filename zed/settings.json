@@ -7,18 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "proxy": "",
   "cli_default_open_behavior": "existing_window",
   // Let the compositor draw the window decoration (border) instead of Zed.
   "window_decorations": "server",
   "agent": {
-    "sidebar_side": "left",
+    "threads_sidebar": {
+      "position": "left"
+    },
     "favorite_models": [],
     "model_parameters": []
   },
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
-        "mode": "auto",
+        "model": "default",
+        "mode": "plan",
         "effort": "medium"
       },
       "type": "registry"
@@ -36,9 +40,5 @@
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Dwarven",
-  },
+  "theme": "Aether",
 }

@@ -1,0 +1,4 @@
+{
+    "template": "stamp",
+    "destination": "~/.cache/aether-reload.stamp"
+}

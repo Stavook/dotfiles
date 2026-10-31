@@ -4,10 +4,12 @@ Personal config for Arch + Hyprland (Wayland).
 
 ## Structure
 
+- `aether/` — color source for waybar, wofi, mako, kitty, Hyprland borders,
+  hyprlock, Zed and Qt/Dolphin (`dwarven.colors.toml` palette + `custom/`
+  templates)
 - `hypr/` — Hyprland config (`hyprland.lua`, `hypridle.conf`, `hyprlock.conf`)
 - `waybar/` — status bar (modules, styles, scripts)
-- `wofi/` — app launcher + power/audio menus
-- `mako/` — notification daemon
+- `wofi/` — app launcher + power/audio/network menus
 - `kitty/` — terminal
 - `zed/` — editor
 - `fastfetch/` — system info fetch config + ASCII logo
@@ -15,8 +17,7 @@ Personal config for Arch + Hyprland (Wayland).
 - `zen/chrome/` — Zen browser userChrome/userContent
 - `gtk-3.0/`, `gtk-4.0/` — GTK app theming/font
 - `fontconfig/` — default font substitution (Hack Nerd Font)
-- `qt6ct/`, `kvantum/` — Qt app theming (Dolphin, CoreCtrl, Stremio)
-- `colorschemes/` — Dwarven KDE color scheme (needed by Dolphin specifically)
+- `qt6ct/` — Qt style (Fusion), font and icons; colors come from `aether/`
 - `sddm/` — login screen theme
 
 ## Setup
@@ -33,24 +34,27 @@ real config instead of overwriting it.
 
 ```
 sudo pacman -S hyprland xdg-desktop-portal-hyprland hyprpolkitagent \
-  hypridle hyprlock mako grim slurp wl-clipboard \
+  hypridle hyprlock hyprpaper mako grim slurp wl-clipboard \
   waybar kitty wofi zed zsh fastfetch dolphin \
   playerctl wireplumber pipewire pipewire-pulse pipewire-alsa pipewire-jack pipewire-audio \
-  qt6ct qt5-wayland qt6-wayland kvantum kvantum-qt5 \
+  qt6ct qt5-wayland qt6-wayland \
   ttf-hack-nerd networkmanager dbus
 ```
 
 AUR (via `yay`/`paru`):
 
 ```
-yay -S zen-browser-bin zsh-theme-powerlevel10k-git mpvpaper
+yay -S zen-browser-bin zsh-theme-powerlevel10k-git aether
 ```
 
 ## Manual steps (not handled by install.sh)
 
-- **Kvantum theme** — open `kvantummanager`, install the theme from
-  `kvantum/Dwarven/`, select it, and set `style=kvantum` in `qt6ct`'s
-  Appearance tab.
+- **Aether app toggles**: in Aether's settings, enable kitty and hyprlock and
+  disable the built-in hyprland and mako apps (`aether/custom/hyprland-lua`
+  and `aether/custom/mako` replace them). Also enable the `vencord` app there.
+- **Vesktop theme**: in Vesktop, Settings → Themes, enable `aether.theme.css`
+  (`install.sh` links it; Discord needs internet to load the theme's base
+  stylesheet).
 - **SDDM login theme**:
   ```
   sudo cp -r sddm/Dwarven /usr/share/sddm/themes/dwarven

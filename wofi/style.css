@@ -1,11 +1,13 @@
+@import url("file:///home/st4v/.config/aether/theme/wofi.css");
+
 * {
   font-family: "Hack Nerd Font", monospace;
   font-size: 18px;
 }
 
 #window {
-  background-color: #141414;
-  border: 2px solid #cc6633;
+  background-color: @background;
+  border: 2px solid @secondary;
   border-radius: 4px;
 }
 
@@ -15,9 +17,9 @@
 }
 
 #input {
-  background-color: #363431;
-  color: #e8e3d8;
-  border: 1px solid #4a4a4a;
+  background-color: @surface;
+  color: @primary;
+  border: 1px solid @dimmed;
   border-radius: 2px;
   padding: 8px;
   margin-bottom: 10px;
@@ -26,7 +28,7 @@
 }
 
 #input:focus {
-  border: 1px solid #cc6633;
+  border: 1px solid @secondary;
   outline: none;
   box-shadow: none;
 }
@@ -42,12 +44,12 @@
 #entry {
   padding: 6px;
   border-radius: 2px;
-  color: #e8e3d8;
+  color: @primary;
 }
 
 #entry:selected {
-  background-color: #cc6633;
-  color: #141414;
+  background-color: @secondary;
+  color: @background;
 }
 
 #entry image {
@@ -55,9 +57,9 @@
 }
 
 #text {
-  color: #e8e3d8;
+  color: @primary;
 }
 
 #text:selected {
-  color: #141414;
+  color: @background;
 }

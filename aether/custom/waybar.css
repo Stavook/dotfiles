@@ -1,0 +1,6 @@
+@define-color background {background};
+@define-color primary {foreground};
+@define-color secondary {accent};
+@define-color alert {orange};
+@define-color error {red};
+@define-color dimmed {muted};

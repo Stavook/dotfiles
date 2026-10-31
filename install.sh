@@ -43,18 +43,11 @@ link "$DOTFILES_DIR/hypr/hyprland.lua"   "$HOME/.config/hypr/hyprland.lua"
 link "$DOTFILES_DIR/hypr/hypridle.conf"  "$HOME/.config/hypr/hypridle.conf"
 link "$DOTFILES_DIR/hypr/hyprlock.conf"  "$HOME/.config/hypr/hyprlock.conf"
 link "$DOTFILES_DIR/hypr/toggle-hide.sh" "$HOME/.config/hypr/toggle-hide.sh"
-link "$DOTFILES_DIR/mako"                "$HOME/.config/mako"
 link "$DOTFILES_DIR/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
 link "$DOTFILES_DIR/gtk-3.0/gtk.css" "$HOME/.config/gtk-3.0/gtk.css"
 link "$DOTFILES_DIR/gtk-4.0/settings.ini" "$HOME/.config/gtk-4.0/settings.ini"
 link "$DOTFILES_DIR/qt6ct/qt6ct.conf" "$HOME/.config/qt6ct/qt6ct.conf"
 link "$DOTFILES_DIR/fontconfig/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
-link "$DOTFILES_DIR/colorschemes/Dwarven.colors" "$HOME/.local/share/color-schemes/Dwarven.colors"
-
-if command -v kwriteconfig6 &>/dev/null; then
-  kwriteconfig6 --file kdeglobals --group General --key ColorScheme Dwarven
-  echo "  applied Dwarven color scheme -> kdeglobals (needed by KDE Frameworks apps like Dolphin)"
-fi
 
 if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.interface gtk-theme 'Default'
@@ -62,6 +55,26 @@ if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   echo "  set gsettings gtk-theme/icon-theme/color-scheme (some GTK apps, e.g. Thunar, read these instead of settings.ini)"
 fi
+
+echo "== aether (colors for waybar/wofi/mako/kitty/hyprland/hyprlock/zed/qt/dolphin) =="
+link "$DOTFILES_DIR/aether/custom" "$HOME/.config/aether/custom"
+
+# Older installs symlinked ~/.config/mako into the repo. Aether now symlinks
+# its rendered mako config into a real ~/.config/mako directory instead.
+[ -L "$HOME/.config/mako" ] && rm "$HOME/.config/mako"
+mkdir -p "$HOME/.config/mako"
+
+if command -v aether &>/dev/null; then
+  aether --import-colors-toml "$DOTFILES_DIR/aether/dwarven.colors.toml" \
+    --wallpaper "$DOTFILES_DIR/sddm/Dwarven/background.jpg" >/dev/null
+  echo "  applied Dwarven palette via aether"
+else
+  echo "  aether not installed -- colors won't be generated until it is"
+fi
+
+# Aether only writes the Vencord theme into its own dir; Vesktop reads
+# ~/.config/vesktop/themes. Enable "aether.theme.css" in Vesktop's settings.
+link "$HOME/.config/aether/theme/vencord.theme.css" "$HOME/.config/vesktop/themes/aether.theme.css"
 
 echo "== zsh =="
 link "$DOTFILES_DIR/zsh/.zshrc"    "$HOME/.zshrc"
