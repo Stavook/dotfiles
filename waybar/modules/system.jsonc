@@ -1,13 +1,13 @@
 {
   "battery": {
-    "format": "<span font_family='lucide'>{icon}</span> {capacity}%",
+    "format": "<span font_family='lucide' rise='-2560'>{icon}</span> {capacity}%",
     "format-icons": ["", "", "", ""],
-    "format-charging": "<span font_family='lucide'></span> {capacity}%",
+    "format-charging": "<span font_family='lucide' rise='-2560'></span> {capacity}%",
     "tooltip-format": "{timeTo}",
     "on-click": "~/.config/wofi/tlp-switcher.sh"
   },
   "backlight": {
-    "format": "<span font_family='lucide'>{icon}</span> {percent}%",
+    "format": "<span font_family='lucide' rise='-2048'>{icon}</span> {percent}%",
     "format-icons": ["", "", ""],
     "on-scroll-up": "brightnessctl set 5%+",
     "on-scroll-down": "brightnessctl set 5%-"

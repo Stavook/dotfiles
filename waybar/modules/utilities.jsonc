@@ -10,10 +10,10 @@
     },
     "modules": [
       "custom/utilities",
-      "backlight",
       "tray",
       "custom/keyboard-layout",
       "network",
+      "backlight",
       "custom/weather"
     ]
   },

@@ -46,9 +46,17 @@ link "$DOTFILES_DIR/hypr/toggle-hide.sh" "$HOME/.config/hypr/toggle-hide.sh"
 link "$DOTFILES_DIR/fontconfig/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
 link "$DOTFILES_DIR/fonts/lucide.ttf" "$HOME/.local/share/fonts/lucide.ttf"
 
+# Aether's icon-theme hook picks the icons once a theme is applied; Papirus is
+# only a placeholder until then, so re-running this doesn't undo the hook.
+if [ -f "$HOME/.config/aether/theme/icon-theme-name" ]; then
+  set_icons=false
+else
+  set_icons=true
+fi
+
 if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+  $set_icons && gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
   gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
   gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 10'
   gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrainsMono Nerd Font 10'
@@ -60,7 +68,7 @@ fi
 # takes precedence over qt6ct.
 if command -v kwriteconfig6 &>/dev/null; then
   kde_font="JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0"
-  kwriteconfig6 --file kdeglobals --group Icons --key Theme Papirus-Dark
+  $set_icons && kwriteconfig6 --file kdeglobals --group Icons --key Theme Papirus-Dark
   for key in font fixed menuFont toolBarFont; do
     kwriteconfig6 --file kdeglobals --group General --key "$key" "$kde_font"
   done
