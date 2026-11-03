@@ -10,18 +10,18 @@
     },
     "modules": [
       "custom/utilities",
+      "backlight",
       "tray",
-      "custom/weather",
-      "network",
       "custom/keyboard-layout",
-      "battery",
-      "backlight"
+      "network",
+      "custom/weather"
     ]
   },
   // Always-visible utilities at the right edge.
   "group/status": {
     "orientation": "horizontal",
     "modules": [
+      "battery",
       "pulseaudio#audio",
       "pulseaudio#microphone",
       "custom/power"
