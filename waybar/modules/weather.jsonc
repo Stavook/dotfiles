@@ -1,0 +1,10 @@
+{
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/weather.sh",
+    "return-type": "json",
+    "interval": 900,
+    "hide-empty-text": true,
+    "signal": 9,
+    "on-click": "pkill -RTMIN+9 waybar"
+  }
+}

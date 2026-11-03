@@ -1,0 +1,7 @@
+#custom-weather {
+    background-color: transparent;
+    color: @primary;
+    padding: 0 6px;
+    margin: 0;
+    border-radius: 6px;
+}

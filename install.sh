@@ -44,6 +44,7 @@ link "$DOTFILES_DIR/hypr/hypridle.conf"  "$HOME/.config/hypr/hypridle.conf"
 link "$DOTFILES_DIR/hypr/hyprlock.conf"  "$HOME/.config/hypr/hyprlock.conf"
 link "$DOTFILES_DIR/hypr/toggle-hide.sh" "$HOME/.config/hypr/toggle-hide.sh"
 link "$DOTFILES_DIR/fontconfig/fonts.conf" "$HOME/.config/fontconfig/fonts.conf"
+link "$DOTFILES_DIR/fonts/lucide.ttf" "$HOME/.local/share/fonts/lucide.ttf"
 
 if command -v gsettings &>/dev/null; then
   gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'

@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
 
-    "spacing": 4,
+    "spacing": 0,
     "include": [
         "./modules/clock.jsonc",
         "./modules/network.jsonc",
@@ -9,25 +9,23 @@
         "./modules/power.jsonc",
         "./modules/audio.jsonc",
         "./modules/keyboard.jsonc",
-        "./modules/network-keyboard.jsonc",
-        "./modules/separator.jsonc",
         "./modules/spotify.jsonc",
         "./modules/workspaces.jsonc",
-        "./modules/system.jsonc"
+        "./modules/system.jsonc",
+        "./modules/weather.jsonc",
+        "./modules/utilities.jsonc",
+        "./modules/window.jsonc"
     ],
     "modules-left": [
-        "custom/power",
-        "tray",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
         "custom/spotify",
-        "group/audio",
-        "group/network-keyboard",
-        "battery",
-        "backlight",
+        "group/utilities",
+        "group/status"
     ]
 }

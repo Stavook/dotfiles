@@ -1,0 +1,10 @@
+/* Handle of the utilities drawer; hover it to slide the rest out. */
+#custom-utilities {
+    color: @secondary;
+    padding: 0 8px;
+}
+
+#pulseaudio {
+    padding: 0 6px;
+    margin: 0;
+}

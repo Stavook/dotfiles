@@ -1,0 +1,4 @@
+#window {
+    color: @primary;
+    padding: 0 10px;
+}

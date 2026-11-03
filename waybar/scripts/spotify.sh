@@ -6,8 +6,6 @@
 PLAYER="spotify"
 MAX_LEN=40
 ELLIPSIS="…"
-ICON_PLAYING="󰝚"
-ICON_PAUSED="󰝛"
 
 json_escape() {
     local s="$1"
@@ -46,15 +44,12 @@ print_status() {
     fi
 
     local class="playing"
-    local icon="$ICON_PLAYING"
     if [[ "$status" == "Paused" ]]; then
         class="paused"
-        icon="$ICON_PAUSED"
     fi
-    label="$icon $label"
 
-    printf '{"text": "%s", "tooltip": "%s", "class": "%s"}\n' \
-        "$(json_escape "$label")" "$(json_escape "$full")" "$class"
+    printf '{"text": "%s", "tooltip": "%s", "class": "%s", "alt": "%s"}\n' \
+        "$(json_escape "$label")" "$(json_escape "$full")" "$class" "$class"
 }
 
 print_status

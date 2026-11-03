@@ -7,8 +7,9 @@
 @import url("styles/power.css");
 @import url("styles/audio.css");
 @import url("styles/keyboard.css");
-@import url("styles/network-keyboard.css");
-@import url("styles/separator.css");
 @import url("styles/spotify.css");
 @import url("styles/workspaces.css");
 @import url("styles/system.css");
+@import url("styles/weather.css");
+@import url("styles/utilities.css");
+@import url("styles/window.css");

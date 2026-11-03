@@ -1,0 +1,34 @@
+{
+  // Expandable menu left of the always-visible group: only the handle shows.
+  // Hovering opens the rest to its right, pushing the handle left.
+  "group/utilities": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 400,
+      "transition-left-to-right": true,
+      "children-class": "utility"
+    },
+    "modules": [
+      "custom/utilities",
+      "tray",
+      "custom/weather",
+      "network",
+      "custom/keyboard-layout",
+      "battery",
+      "backlight"
+    ]
+  },
+  // Always-visible utilities at the right edge.
+  "group/status": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio#audio",
+      "pulseaudio#microphone",
+      "custom/power"
+    ]
+  },
+  "custom/utilities": {
+    "format": "<span font_family='lucide'></span>",
+    "tooltip": false
+  }
+}

@@ -1,7 +1,6 @@
 #clock {
-    background-color: @background;
+    background-color: transparent;
     padding: 0 10px;
     margin: 4px 6px;
     border-radius: 6px;
-    border: 1px solid @secondary;
 }

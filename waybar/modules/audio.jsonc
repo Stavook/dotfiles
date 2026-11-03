@@ -1,18 +1,10 @@
 {
-  "group/audio": {
-    "orientation": "horizontal",
-    "modules": [
-      "pulseaudio#audio",
-      "custom/separator",
-      "pulseaudio#microphone"
-    ]
-  },
   "pulseaudio#audio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "󰝟 Muted",
+    "format": "<span font_family='lucide'>{icon}</span>",
+    "format-muted": "<span font_family='lucide'></span>",
     "format-icons": {
-      "headphone": "󰋋",
-      "default": ["󰕿", "󰖀", "󰕾"]
+      "headphone": "",
+      "default": ["", "", ""]
     },
     "scroll-step": 5,
     "on-click": "~/.config/wofi/audio-switcher.sh",
@@ -20,8 +12,8 @@
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": "󰍬",
-    "format-source-muted": "󰍭",
+    "format-source": "<span font_family='lucide'></span>",
+    "format-source-muted": "<span font_family='lucide'></span>",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "tooltip": false
   }

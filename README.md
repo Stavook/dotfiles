@@ -17,6 +17,7 @@ Personal config for Arch + Hyprland (Wayland).
 - `zen/chrome/` — Zen browser userChrome/userContent
 - `qt6ct/` — template for the Qt style (Fusion) and font; Aether's hook fills in
   the icon theme and the palette
+- `fonts/` — Lucide icon font (official release) used by waybar's icons
 - `fontconfig/` — default font substitution (JetBrainsMono Nerd Font)
 - `sddm/` — login screen theme (colors and background come from Aether)
 

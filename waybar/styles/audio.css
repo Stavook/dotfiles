@@ -1,11 +1,3 @@
-#audio {
-    background-color: @background;
-    padding: 0 10px;
-    margin: 4px 6px;
-    border-radius: 6px;
-    border: 1px solid @secondary;
-}
-
 #pulseaudio.audio,
 #pulseaudio.microphone {
     color: @primary;
