@@ -88,7 +88,8 @@ def render(items, offset, dnd, colors):
     if len(items) > PAGE:
         last = min(offset + PAGE, len(items))
         lines.append(paint(f"{offset + 1}-{last}/{len(items)}  scroll for more", muted))
-    lines.append(paint("click: do not disturb  r-click: clear", muted))
+    icon = lambda code: f"<span font_family='lucide'>{chr(code)}</span>"
+    lines.append(paint(f"{icon(0xe6bf)} : do not disturb   {icon(0xe6c0)} : clear", muted))
     return "\n".join(lines)
 
 

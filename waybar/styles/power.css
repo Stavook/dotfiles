@@ -2,7 +2,9 @@
     background-color: transparent;
     color: @primary;
     padding: 0 6px;
-    margin: 0;
+    /* Last module on the right: 14px + 6px padding = the 20px the workspaces
+       number sits from the left edge (6 margin + 4 padding + 2 + 8). */
+    margin: 0 14px 0 0;
     border-radius: 6px;
 }
 
