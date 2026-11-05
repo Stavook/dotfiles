@@ -1,25 +1,53 @@
-# dotfiles
+<h1 align="center">dotfiles</h1>
 
-Personal config for Arch + Hyprland (Wayland).
+<p align="center">
+  Arch Linux + Hyprland (Wayland), themed from one place with
+  <a href="https://github.com/bjarneo/aether">Aether</a>.
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/desktop.png" alt="Desktop screenshot" width="100%">
+</p>
+
+## Highlights
+
+- **One source of colors.** Pick a theme in Aether and the bar, launcher,
+  notifications, terminal, window borders, lock screen, editor, file manager,
+  GTK and Qt apps, browser, Discord, wallpaper and login screen all follow.
+  Nothing hardcodes a color.
+- **Waybar with a utilities drawer.** Always-visible status (battery, audio,
+  mic, power) on the right; click the handle to slide out tray, keyboard
+  layout, network, brightness, notifications and weather. Lucide icons
+  throughout.
+- **Calendar tooltip you can drive from the keyboard.** Hover the clock and use
+  the arrow keys to change month, Backspace to return to today.
+- **Notification center on top of mako.** Starts in do-not-disturb, collects
+  everything, and the bell shows the history. Click toggles do-not-disturb,
+  right-click clears.
+- **Wofi menus** for audio, network, power and TLP profiles.
+- **Two machines, one repo.** The desktop and the laptop share everything;
+  per-machine values sit behind a hostname check in `hypr/hyprland.lua`.
+- **Themed login screen.** The SDDM theme takes its colors and a pre-blurred
+  wallpaper from the current Aether theme.
 
 ## Structure
 
-- `aether/` — templates that let Aether color waybar, wofi, mako, kitty,
-  Hyprland borders, hyprlock, Zed, Dolphin, GTK apps (including file pickers),
-  Zen and Vesktop
-- `hypr/` — Hyprland config (`hyprland.lua`, `hypridle.conf`, `hyprlock.conf`)
-- `waybar/` — status bar (modules, styles, scripts)
-- `wofi/` — app launcher + power/audio/network menus
-- `kitty/` — terminal
-- `zed/` — editor
-- `fastfetch/` — system info fetch config + ASCII logo
-- `zsh/` — `.zshrc`, `.p10k.zsh`
-- `zen/chrome/` — Zen browser userChrome/userContent
-- `qt6ct/` — template for the Qt style (Fusion) and font; Aether's hook fills in
-  the icon theme and the palette
-- `fonts/` — Lucide icon font (official release) used by waybar's icons
-- `fontconfig/` — default font substitution (JetBrainsMono Nerd Font)
-- `sddm/` — login screen theme (colors and background come from Aether)
+| Path | What it is |
+|---|---|
+| `aether/` | Templates and hooks that let Aether color waybar, wofi, mako, kitty, Hyprland borders, hyprlock, Zed, Dolphin, GTK apps (including file pickers), Zen and Vesktop |
+| `hypr/` | Hyprland (`hyprland.lua`, `hypridle.conf`, `hyprlock.conf`) |
+| `waybar/` | Status bar: modules, styles and the scripts behind the custom modules |
+| `wofi/` | App launcher and the audio, network, power and TLP menus |
+| `kitty/` | Terminal |
+| `zed/` | Editor |
+| `zsh/` | `.zshrc`, `.p10k.zsh` |
+| `fastfetch/` | System info config and ASCII logo |
+| `zen/chrome/` | Zen browser `userChrome` / `userContent` |
+| `qt6ct/` | Template for the Qt style (Fusion) and font; Aether's hook fills in the icon theme and palette |
+| `fonts/` | Lucide icon font used by waybar's icons |
+| `fontconfig/` | Default font substitution (JetBrainsMono Nerd Font) |
+| `sddm/` | Login screen theme |
+| `tlp/` | TLP power settings for the laptop |
 
 ## How theming works
 
