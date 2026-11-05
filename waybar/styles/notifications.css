@@ -1,0 +1,8 @@
+#custom-notifications {
+    color: @primary;
+    padding: 0 6px;
+}
+
+#custom-notifications.dnd {
+    color: @alert;
+}

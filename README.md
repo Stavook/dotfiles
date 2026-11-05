@@ -63,7 +63,7 @@ sudo pacman -S hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprp
   waybar kitty wofi zed zsh fastfetch dolphin \
   playerctl wireplumber pipewire pipewire-pulse pipewire-alsa pipewire-jack pipewire-audio \
   qt6ct qt5-wayland qt6-wayland \
-  ttf-jetbrains-mono-nerd papirus-icon-theme python-pillow networkmanager dbus
+  ttf-jetbrains-mono-nerd papirus-icon-theme python-pillow libnotify networkmanager dbus
 ```
 
 AUR (via `yay`/`paru`):

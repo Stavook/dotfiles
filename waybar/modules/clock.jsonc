@@ -1,7 +1,12 @@
 {
-"clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%d-%m-%Y}",
-    "format": "{:%H:%M}"
+  "custom/clock": {
+    "exec": "~/.config/waybar/scripts/clock.py",
+    "return-type": "json",
+    "interval": 10,
+    "signal": 10,
+    "on-click": "~/.config/waybar/scripts/clock.py date",
+    "on-scroll-up": "~/.config/waybar/scripts/clock.py shift -1",
+    "on-scroll-down": "~/.config/waybar/scripts/clock.py shift 1",
+    "cursor": true
   }
 }

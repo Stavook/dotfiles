@@ -1,7 +1,11 @@
-/* Handle of the utilities drawer; hover it to slide the rest out. */
+/* Handle of the utilities drawer; click it to slide the rest out. */
 #custom-utilities {
     color: @secondary;
     padding: 0 8px;
+}
+
+#custom-utilities.open {
+    color: @alert;
 }
 
 #pulseaudio {

@@ -1,6 +1,6 @@
-#clock {
+#custom-clock {
     background-color: transparent;
     padding: 0 10px;
-    margin: 4px 6px;
+    margin: 0 6px;
     border-radius: 6px;
 }

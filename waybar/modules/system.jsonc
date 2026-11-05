@@ -9,6 +9,7 @@
   "backlight": {
     "format": "<span font_family='lucide' rise='-2048'>{icon}</span> {percent}%",
     "format-icons": ["", "", ""],
+    "on-click": "",
     "on-scroll-up": "brightnessctl set 5%+",
     "on-scroll-down": "brightnessctl set 5%-"
   }

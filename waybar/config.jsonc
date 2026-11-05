@@ -14,14 +14,15 @@
         "./modules/system.jsonc",
         "./modules/weather.jsonc",
         "./modules/utilities.jsonc",
-        "./modules/window.jsonc"
+        "./modules/window.jsonc",
+        "./modules/notifications.jsonc"
     ],
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
     ],
     "modules-center": [
-        "clock"
+        "custom/clock"
     ],
     "modules-right": [
         "custom/spotify",

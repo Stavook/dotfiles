@@ -1,6 +1,10 @@
 {
   "tray": {
     "icon-size": 16,
-    "spacing": 2
+    "spacing": 2,
+    "show-passive-items": true,
+    "icons": {
+      "spotify-client": "/usr/share/icons/hicolor/22x22/apps/spotify-launcher.png"
+    }
   }
 }

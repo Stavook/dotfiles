@@ -88,6 +88,8 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("hypridle")
   hl.exec_cmd("mako")
+  -- Notifications stay hidden (but are still collected) until you turn this off.
+  hl.exec_cmd("sleep 1 && makoctl mode -a do-not-disturb")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("corectrl --minimize-systray")
 end)
@@ -345,6 +347,30 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("f=~/Pictures/screenshot-$(da
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+
+-- Calendar keys: waybar's tooltip can't take keyboard input, so while the mouse
+-- is on the clock these keys go to clock.py through a submap. Waybar has no hover
+-- hook, hence the timer. They only work on the clock, elsewhere they're untouched.
+local clock = "~/.config/waybar/scripts/clock.py"
+hl.define_submap("calendar", function()
+    hl.bind("left",      hl.dsp.exec_cmd(clock .. " shift -1"))
+    hl.bind("right",     hl.dsp.exec_cmd(clock .. " shift 1"))
+    hl.bind("BackSpace", hl.dsp.exec_cmd(clock .. " reset"))
+end)
+
+local clockHalfWidth = 70 -- wide enough for the date as well as the time
+local barHeight      = 25
+local overClock      = false
+hl.timer(function()
+    local cursor  = hl.get_cursor_pos()
+    local monitor = hl.get_monitor_at_cursor()
+    local center  = monitor.x + monitor.width / 2
+    local over    = cursor.y <= barHeight and math.abs(cursor.x - center) <= clockHalfWidth
+    if over ~= overClock then
+        overClock = over
+        hl.dispatch(hl.dsp.submap(over and "calendar" or "reset"))
+    end
+end, { timeout = 150, type = "repeat" })
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })

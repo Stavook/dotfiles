@@ -1,11 +1,12 @@
 {
   // Expandable menu left of the always-visible group: only the handle shows.
-  // Hovering opens the rest to its right, pushing the handle left.
+  // Clicking it opens the rest to its right, pushing the handle left.
   "group/utilities": {
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 400,
       "transition-left-to-right": true,
+      "click-to-reveal": true,
       "children-class": "utility"
     },
     "modules": [
@@ -14,6 +15,7 @@
       "custom/keyboard-layout",
       "network",
       "backlight",
+      "custom/notifications",
       "custom/weather"
     ]
   },
@@ -27,8 +29,19 @@
       "custom/power"
     ]
   },
+  // on-click-release, not on-click: the press must reach the group to toggle it.
   "custom/utilities": {
-    "format": "<span font_family='lucide'></span>",
+    "exec": "~/.config/waybar/scripts/drawer.sh",
+    "return-type": "json",
+    "interval": "once",
+    "signal": 11,
+    "format": "<span font_family='lucide'>{icon}</span>",
+    "format-icons": {
+      "closed": "",
+      "open": ""
+    },
+    "on-click-release": "~/.config/waybar/scripts/drawer.sh toggle",
+    "cursor": true,
     "tooltip": false
   }
 }

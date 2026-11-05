@@ -7,6 +7,7 @@ border-radius=6
 padding=10
 margin=10
 default-timeout=5000
+max-history=100
 
 [urgency=low]
 border-color={muted}
@@ -14,3 +15,6 @@ border-color={muted}
 [urgency=critical]
 border-color={red}
 default-timeout=0
+
+[mode=do-not-disturb]
+invisible=1

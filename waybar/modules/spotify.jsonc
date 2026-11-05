@@ -4,7 +4,7 @@
     "return-type": "json",
     "hide-empty-text": true,
     "exec-on-event": false,
-    "format": "<span font_family='lucide'>{icon}</span> {text}",
+    "format": "<span font_family='lucide' rise='-2048'>{icon}</span> {text}",
     "format-icons": {
       "playing": "",
       "paused": ""

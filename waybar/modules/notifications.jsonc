@@ -1,0 +1,18 @@
+{
+  "custom/notifications": {
+    "exec": "~/.config/waybar/scripts/notifications.py",
+    "return-type": "json",
+    "interval": 5,
+    "signal": 12,
+    "format": "<span font_family='lucide'>{icon}</span>{text}",
+    "format-icons": {
+      "on": "",
+      "dnd": ""
+    },
+    "on-click": "~/.config/waybar/scripts/notifications.py toggle",
+    "on-click-right": "~/.config/waybar/scripts/notifications.py clear",
+    "on-scroll-up": "~/.config/waybar/scripts/notifications.py scroll -1",
+    "on-scroll-down": "~/.config/waybar/scripts/notifications.py scroll 1",
+    "cursor": true
+  }
+}
